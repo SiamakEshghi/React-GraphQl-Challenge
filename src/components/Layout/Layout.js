@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+// @flow
+import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Head from './Head/Head';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import styles from './Layout.module.scss';
 
-const Layout = (props) => {
-  const [showSidebar, setShowSidebar] = useState(false);
+type LayoutProps = {
+  children?: React.Node,
+};
+
+const Layout = (props: LayoutProps): React.Node => {
+  const [showSidebar, setShowSidebar] = React.useState(false);
   const { windowWidth } = useWindowDimensions();
   const { t } = useTranslation();
 
@@ -28,7 +33,7 @@ const Layout = (props) => {
       <div className={styles.sidebar} style={sidebarStyle}>
         Sidebar
       </div>
-      <div className={styles.main}>Hi</div>
+      <div className={styles.main}>{props.children}</div>
     </div>
   );
 };
