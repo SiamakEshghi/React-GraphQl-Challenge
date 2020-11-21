@@ -4,5 +4,9 @@
     "lang": "IN",
     "home": "Accueil",
     "close": "ferme"
+  },
+  "layout": {
+    "openFav": "Ouvrir la liste des favoris",
+    "closeFav": "Fermer la liste des favoris"
   }
 }

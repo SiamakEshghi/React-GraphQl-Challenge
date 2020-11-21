@@ -1,0 +1,21 @@
+@import '../../../styles/variables/colors.scss';
+@import '../../../styles/mixins/responsive.scss';
+
+.head {
+  background-color: $primaryColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+
+  @include respond(phone) {
+    font-size: 0.7rem;
+  }
+}
+
+.title {
+  color: $secondaryColor;
+  cursor: pointer;
+  text-transform: uppercase;
+}

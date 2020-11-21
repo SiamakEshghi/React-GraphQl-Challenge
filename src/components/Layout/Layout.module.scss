@@ -1,0 +1,58 @@
+@import '../../styles/mixins/responsive.scss';
+
+.layout {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  grid-template-columns: 10rem 1fr;
+
+  @include respond(phone) {
+    grid-template-rows: 4rem 2rem 1fr;
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
+  }
+}
+
+.head {
+  display: grid;
+  grid-column: 1 / -1;
+  align-items: stretch;
+}
+
+.sidebar {
+  background-color: red;
+  grid-column: 1 / 2;
+  grid-row: 2 / -1;
+
+  @include respond(phone) {
+    grid-row: 3 / -1;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    background-color: rgba($color: red, $alpha: 0.7);
+  }
+}
+
+.main {
+  height: 100%;
+  grid-column: 2 / -1;
+  grid-row: 2 / -1;
+  background-color: green;
+  @include respond(phone) {
+    grid-row: 3 / -1;
+    grid-column: 1 / -1;
+  }
+}
+
+.btn {
+  display: none;
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+
+  @include respond(phone) {
+    display: inline;
+  }
+}

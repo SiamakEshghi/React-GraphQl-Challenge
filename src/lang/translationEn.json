@@ -4,5 +4,9 @@
     "lang": "FR",
     "home": "Home",
     "close": "close"
+  },
+  "layout": {
+    "openFav": "Open Favorite List",
+    "closeFav": "Close Favorite List"
   }
 }
