@@ -1,3 +1,5 @@
+@import '../../../styles/variables/colors.scss';
+
 .card {
   position: relative;
   overflow: hidden;
@@ -17,5 +19,6 @@
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
+    color: $tertiaryColor;
   }
 }

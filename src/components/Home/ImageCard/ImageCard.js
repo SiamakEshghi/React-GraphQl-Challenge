@@ -4,7 +4,7 @@ import styles from './ImageCard.module.scss';
 import unknown from '../../../assets/unknown.jpg';
 
 const ImageCard = (props) => {
-  const { title, url } = props;
+  const { title, url, mbid } = props;
 
   return (
     <div className={styles.card}>

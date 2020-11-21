@@ -1,0 +1,15 @@
+@import '../../../styles/variables/colors.scss';
+
+.input {
+  background-color: $gray;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 100px;
+  width: 90%;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    width: 100%;
+  }
+}
