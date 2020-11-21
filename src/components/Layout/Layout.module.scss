@@ -1,4 +1,5 @@
 @import '../../styles/mixins/responsive.scss';
+@import '../../styles/variables/colors.scss';
 
 .layout {
   min-height: 100vh;
@@ -15,15 +16,15 @@
 }
 
 .head {
-  display: grid;
   grid-column: 1 / -1;
-  align-items: stretch;
+  border-bottom: 1px solid $secondaryColor;
 }
 
 .sidebar {
-  background-color: red;
+  background-image: linear-gradient(to right, $secondaryColor, $primaryColor);
   grid-column: 1 / 2;
   grid-row: 2 / -1;
+  color: $white;
 
   @include respond(phone) {
     grid-row: 3 / -1;
@@ -40,7 +41,7 @@
   height: 100%;
   grid-column: 2 / -1;
   grid-row: 2 / -1;
-  background-color: green;
+  background-color: $secondaryColor;
   @include respond(phone) {
     grid-row: 3 / -1;
     grid-column: 1 / -1;
