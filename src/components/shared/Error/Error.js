@@ -23,12 +23,10 @@ const Error = (props: ErrorProps): React.Node => {
 
   return (
     <h2 className={styles.error}>
-      <IoIosSad />
-      &nbsp;
       {`${t('error.message')} ${title}`}
-      &nbsp;
+      <IoIosSad />
       <span>
-        <a href="" onClick={clickHere}>
+        <a href="#" onClick={clickHere}>
           {t('general.clickHere')}
         </a>
       </span>
