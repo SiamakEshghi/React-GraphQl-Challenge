@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 
 import { useLazyQuery } from '@apollo/client';
@@ -9,7 +10,9 @@ import Search from './Search/Search';
 import Spinner from '../shared/Spinner/Spinner';
 import styles from './Home.module.scss';
 
-const Home = (props) => {
+type HomeProps = {};
+
+const Home = (props: HomeProps): React.Node => {
   const [artists, setArtists] = React.useState([]);
 
   const [getArtistsData, { loading }] = useLazyQuery(GET_ARTISTS_LIST, {
@@ -52,12 +55,7 @@ const Home = (props) => {
   );
 
   const renderCards = artists.map((art) => (
-    <ImageCard
-      key={art.key}
-      mbid={art.mbid}
-      title={art.name}
-      url={art.imgUrl}
-    />
+    <ImageCard key={art.cursor} artist={art} />
   ));
 
   return (
