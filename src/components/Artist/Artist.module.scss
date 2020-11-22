@@ -1,0 +1,16 @@
+@import '../../styles/mixins/responsive.scss';
+
+.artist {
+  display: grid;
+  grid-template-columns: 35rem 1fr;
+  grid-template-rows: 35rem 1fr;
+
+  @include respond(tabPort) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 35rem 1fr;
+  }
+
+  .albums {
+    grid-column: 1 / -1;
+  }
+}

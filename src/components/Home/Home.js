@@ -1,11 +1,12 @@
 // @flow
 import * as React from 'react';
-
 import { useLazyQuery } from '@apollo/client';
+import { useHistory } from 'react-router-dom';
+
 import { GET_ARTISTS_LIST } from '../../graphQL/queries';
 import { getArtistsList, getEndCursor } from './utils';
 import useWindowScroll from '../../hooks/windowsScroll';
-import ImageCard from './ImageCard/ImageCard';
+import ImageCard from '../shared/ImageCard/ImageCard';
 import Search from './Search/Search';
 import Spinner from '../shared/Spinner/Spinner';
 import styles from './Home.module.scss';
@@ -54,8 +55,20 @@ const Home = (props: HomeProps): React.Node => {
     [getArtistsData]
   );
 
+  const history = useHistory();
+
+  const toArtistPage = (mbid) => {
+    history.push(`/artist/${mbid}`);
+  };
+
   const renderCards = artists.map((art) => (
-    <ImageCard key={art.cursor} artist={art} />
+    <ImageCard
+      key={art.cursor}
+      name={art.name}
+      imgUrl={art.imgUrl}
+      mbid={art.mbid}
+      imageOnclickHandler={toArtistPage}
+    />
   ));
 
   return (
