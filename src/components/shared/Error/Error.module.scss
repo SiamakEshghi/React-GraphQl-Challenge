@@ -1,0 +1,9 @@
+@import '../../../styles/variables/colors.scss';
+
+.error {
+  color: $white;
+  display: flex;
+  align-items: center;
+  margin-left: 10rem;
+  margin-top: 2rem;
+}

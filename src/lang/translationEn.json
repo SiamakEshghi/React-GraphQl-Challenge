@@ -14,5 +14,13 @@
   },
   "search": {
     "placeHolder": "Enter the name of the artist"
+  },
+  "general": {
+    "clickHere": "Click Here."
+  },
+  "error": {
+    "message": "OOPS!. Somthing bad happend in ",
+    "artist": "Getting Artist Data.",
+    "album": "Getting Album Data."
   }
 }
