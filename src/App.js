@@ -1,17 +1,32 @@
-import { useTranslation } from 'react-i18next';
+import React, { Suspense, lazy } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
+import Spinner from './components/shared/Spinner/Spinner';
 import Layout from './components/Layout/Layout';
-import Home from './components/Home/Home';
 import './App.scss';
 
-function App() {
-  const { t, i18n } = useTranslation();
+const Home = lazy(() => import('./components/Home/Home'));
+const Artist = lazy(() => import('./components/Artist/Artist'));
+const Album = lazy(() => import('./components/Album/Album'));
 
-  console.log(t('head.title'));
+function App() {
   return (
     <div className="App">
       <Layout>
-        <Home />
+        <Suspense fallback={<Spinner loading={true} />}>
+          <Switch>
+            <Route path="/home" exact>
+              <Home />
+            </Route>
+            <Route path="/artist/:artistId" exact>
+              <Artist />
+            </Route>
+            <Route path="/artist/:artistId/album/:albumId" exact>
+              <Album />
+            </Route>
+            <Redirect from="/" to="/home" />
+          </Switch>
+        </Suspense>
       </Layout>
     </div>
   );

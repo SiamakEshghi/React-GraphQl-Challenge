@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import client from './graphQL';
 import { ApolloProvider } from '@apollo/client';
@@ -13,7 +14,9 @@ import App from './App';
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </ApolloProvider>,
   document.getElementById('root')
