@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './Search.module.scss';
 
 type SearchProps = {
-  searchHandler: () => void,
+  searchHandler: (string) => void,
 };
 
 const Search = (props: SearchProps): React.Node => {

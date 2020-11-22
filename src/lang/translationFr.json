@@ -8,5 +8,11 @@
   "layout": {
     "openFav": "Ouvrir la liste des favoris",
     "closeFav": "Fermer la liste des favoris"
+  },
+  "sidebar": {
+    "title": "Liste des favoris"
+  },
+  "search": {
+    "placeHolder": "Entrez le nom de l'artiste"
   }
 }

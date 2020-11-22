@@ -1,20 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 
 import Menue from './Menue/Menue';
 import styles from './Head.module.scss';
 
-const langOptions = ['en', 'fr'];
-
 const Head = (props) => {
   const { t, i18n } = useTranslation();
+  const history = useHistory();
 
   const changLanguage = (e) => {
     i18n.changeLanguage(e.target.value);
   };
 
   const toHome = (e) => {
-    console.log('To home handler');
+    history.push('/home');
   };
 
   return (

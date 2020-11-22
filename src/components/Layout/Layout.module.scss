@@ -24,7 +24,6 @@
   background-image: linear-gradient(to right, $secondaryColor, $primaryColor);
   grid-column: 1 / 2;
   grid-row: 2 / -1;
-  color: $white;
 
   @include respond(phone) {
     grid-row: 3 / -1;
@@ -52,7 +51,12 @@
   display: none;
   grid-row: 2 / 3;
   grid-column: 1 / -1;
-
+  background-color: $grayDark;
+  border: none;
+  box-shadow: 0 3px 5px 4px $gray;
+  color: $white;
+  font-weight: 600;
+  font-size: 1.1rem;
   @include respond(phone) {
     display: inline;
   }
