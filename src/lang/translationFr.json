@@ -6,11 +6,11 @@
     "close": "ferme"
   },
   "layout": {
-    "openFav": "Ouvrir la liste des favoris",
-    "closeFav": "Fermer la liste des favoris"
+    "openFav": "Ouvrir la liste des favorite",
+    "closeFav": "Fermer la liste des favorite"
   },
   "sidebar": {
-    "title": "favoris"
+    "title": "favorite"
   },
   "search": {
     "placeHolder": "Entrez le nom de l'artiste"
@@ -33,8 +33,8 @@
     "albums": {
       "title": "Les Albums:"
     },
-    "addToFavToast": "a été ajouté à votre liste de favoris.",
-    "removeFromFavToast": "a été supprimé de votre liste de favoris."
+    "addToFavToast": "a été ajouté à votre liste de favorite.",
+    "removeFromFavToast": "a été supprimé de votre liste de favorite."
   },
   "album": {
     "backToArtist": "Retour à la page de l'artiste",
