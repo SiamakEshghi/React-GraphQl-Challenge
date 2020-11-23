@@ -43,7 +43,7 @@ const Home = (props: HomeProps): React.Node => {
         variables: { name: nameRef.current, endCursor: endCursorRef.current },
       });
     }
-  }, [isScrolledToBottom]);
+  }, [isScrolledToBottom, getArtistsData]);
 
   const searchForTheArtist = React.useCallback(
     (name) => {

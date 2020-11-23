@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import MenueItems from './MenueItems/MenueItems';
 import styles from './Menue.module.scss';
 
-export default (props) => {
+const Menue = (props) => {
   const [showMenue, setShowMenue] = useState(false);
 
   return (
@@ -17,3 +17,5 @@ export default (props) => {
     </div>
   );
 };
+
+export default Menue;

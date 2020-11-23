@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Spinner from './components/shared/Spinner/Spinner';
 import Layout from './components/Layout/Layout';
 import './App.scss';
 

@@ -6,12 +6,8 @@ import Menue from './Menue/Menue';
 import styles from './Head.module.scss';
 
 const Head = (props) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const history = useHistory();
-
-  const changLanguage = (e) => {
-    i18n.changeLanguage(e.target.value);
-  };
 
   const toHome = (e) => {
     history.push('/home');

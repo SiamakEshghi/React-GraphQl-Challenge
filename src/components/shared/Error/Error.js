@@ -26,9 +26,7 @@ const Error = (props: ErrorProps): React.Node => {
       {`${t('error.message')} ${title}`}
       <IoIosSad />
       <span>
-        <a href="#" onClick={clickHere}>
-          {t('general.clickHere')}
-        </a>
+        <button onClick={clickHere}>{t('general.clickHere')}</button>
       </span>
     </h2>
   );

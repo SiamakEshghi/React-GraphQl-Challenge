@@ -10,7 +10,7 @@ type MenueItemProps = {
   onCloseHandler?: () => void,
 };
 
-export default (props: MenueItemProps): React.Node => {
+const MenueItems = (props: MenueItemProps): React.Node => {
   const { t, i18n } = useTranslation();
   const history = useHistory();
   const { show, onCloseHandler } = props;
@@ -37,3 +37,5 @@ export default (props: MenueItemProps): React.Node => {
     </div>
   );
 };
+
+export default MenueItems;

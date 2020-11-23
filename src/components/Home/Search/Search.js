@@ -21,7 +21,7 @@ const Search = (props: SearchProps): React.Node => {
     // debouncing
     let timeout = setTimeout(() => searchHandler(value), 500);
     return () => clearTimeout(timeout);
-  }, [value]);
+  }, [value, searchHandler]);
 
   return (
     <input

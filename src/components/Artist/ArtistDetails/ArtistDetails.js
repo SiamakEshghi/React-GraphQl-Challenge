@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 import { IoIosHeart, IoMdHeartEmpty } from 'react-icons/io';
 import styles from './ArtistDetails.module.scss';
-import { addToFavList } from '../../../store/actions';
 
 type ArtistDetailsProps = {
   artist: {
