@@ -6,11 +6,11 @@
     "close": "close"
   },
   "layout": {
-    "openFav": "Open Favorite List",
-    "closeFav": "Close Favorite List"
+    "openFav": "Open Favourite List",
+    "closeFav": "Close Favourite List"
   },
   "sidebar": {
-    "title": "favorite list"
+    "title": "favourite"
   },
   "search": {
     "placeHolder": "Enter the name of the artist"
@@ -22,5 +22,28 @@
     "message": "OOPS!. Somthing bad happend in ",
     "artist": "Getting Artist Data.",
     "album": "Getting Album Data."
-  }
+  },
+  "artDetails": {
+    "name": "Name",
+    "gender": "Gender",
+    "country": "Country",
+    "begin": "Begin",
+    "end": "End",
+    "rating": "Rating",
+    "albums": {
+      "title": "Albums:"
+    },
+    "addToFavToast": "has been added to your favourite list.",
+    "removeFromFavToast": "has been removed from your favourite list."
+  },
+  "album": {
+    "backToArtist": "Back to Artist Page",
+    "firstReleas": "First Releas",
+    "rating": "Rating",
+    "discogs": {
+      "forSaleCount": "Sale Count",
+      "lowestPrice": "Lowest Price",
+      "year": "Year"
+    }
+  } 
 }

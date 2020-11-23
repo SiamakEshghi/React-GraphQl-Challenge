@@ -1,0 +1,33 @@
+@import '../../../styles/variables/colors.scss';
+.toast {
+  color: $tertiaryColor;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  padding: 1rem;
+  z-index: 9999;
+  background-color: $grayDark;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  animation: toast-move 0.7s;
+
+  button {
+    margin-left: 1rem;
+    background-color: transparent;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+}
+
+@keyframes toast-move {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

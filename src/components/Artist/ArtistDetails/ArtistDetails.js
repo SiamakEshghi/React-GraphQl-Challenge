@@ -1,11 +1,11 @@
 // @flow
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { addToFavList, removeFromFavList } from '../../../store/actions';
 import { IoIosHeart, IoMdHeartEmpty } from 'react-icons/io';
 import styles from './ArtistDetails.module.scss';
+import { addToFavList } from '../../../store/actions';
 
 type ArtistDetailsProps = {
   artist: {
@@ -17,21 +17,14 @@ type ArtistDetailsProps = {
     country?: string,
     mbid?: string,
   },
+  addToFaveHandler: () => void,
+  removeFromFaveHandler: () => void,
 };
 
 const ArtistDetails = (props: ArtistDetailsProps): React.Node => {
-  const { artist } = props;
+  const { artist, addToFaveHandler, removeFromFaveHandler } = props;
   const { t } = useTranslation();
   const { favList } = useSelector(({ fav }) => fav);
-  const dispatch = useDispatch();
-
-  const addArtistTofavList = () => {
-    dispatch(addToFavList({ name: artist.name, mbid: artist.mbid }));
-  };
-
-  const removeArtistTofavList = () => {
-    dispatch(removeFromFavList(artist.mbid));
-  };
 
   return (
     <div className={styles.artDetails}>
@@ -57,14 +50,11 @@ const ArtistDetails = (props: ArtistDetailsProps): React.Node => {
         {favList.some((fav) => fav.mbid === artist.mbid) ? (
           <IoIosHeart
             color="red"
-            onClick={removeArtistTofavList}
+            onClick={removeFromFaveHandler}
             className={styles.icon}
           />
         ) : (
-          <IoMdHeartEmpty
-            onClick={addArtistTofavList}
-            className={styles.icon}
-          />
+          <IoMdHeartEmpty onClick={addToFaveHandler} className={styles.icon} />
         )}
       </h1>
     </div>

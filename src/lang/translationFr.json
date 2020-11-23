@@ -10,7 +10,7 @@
     "closeFav": "Fermer la liste des favoris"
   },
   "sidebar": {
-    "title": "Liste des favoris"
+    "title": "favoris"
   },
   "search": {
     "placeHolder": "Entrez le nom de l'artiste"
@@ -22,5 +22,28 @@
     "message": "OOPS!. Quelque chose de mal est arrivé ",
     "artist": "Obtention des données d'artiste.",
     "album": "Obtention des données d'album."
-  }
+  },
+  "artDetails": {
+    "name": "Nom",
+    "gender": "Le Genre",
+    "country": "Pays",
+    "begin": "Commencer",
+    "end": "Fin",
+    "rating": "Évaluation",
+    "albums": {
+      "title": "Les Albums:"
+    },
+    "addToFavToast": "a été ajouté à votre liste de favoris.",
+    "removeFromFavToast": "a été supprimé de votre liste de favoris."
+  },
+  "album": {
+    "backToArtist": "Retour à la page de l'artiste",
+    "firstReleas": "Première sortie",
+    "rating": "Évaluation",
+    "discogs": {
+      "forSaleCount": "Sale Count",
+      "lowestPrice": "Compte de vente",
+      "year": "An"
+    }
+  } 
 }
