@@ -1,1 +1,1 @@
-export { addToFavList, removeFromFavList } from './favourite';
+export { addToFavList, removeFromFavList } from './favorite';

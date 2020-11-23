@@ -6,11 +6,11 @@
     "close": "close"
   },
   "layout": {
-    "openFav": "Open Favourite List",
-    "closeFav": "Close Favourite List"
+    "openFav": "Open Favorite List",
+    "closeFav": "Close Favorite List"
   },
   "sidebar": {
-    "title": "favourite"
+    "title": "favorite"
   },
   "search": {
     "placeHolder": "Enter the name of the artist"
@@ -33,8 +33,8 @@
     "albums": {
       "title": "Albums:"
     },
-    "addToFavToast": "has been added to your favourite list.",
-    "removeFromFavToast": "has been removed from your favourite list."
+    "addToFavToast": "has been added to your favorite list.",
+    "removeFromFavToast": "has been removed from your favorite list."
   },
   "album": {
     "backToArtist": "Back to Artist Page",

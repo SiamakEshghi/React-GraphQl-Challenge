@@ -4,6 +4,7 @@
 .box {
   cursor: pointer;
   width: 3rem;
+  padding-top: 1rem;
 
   @include respond(phone) {
     width: 2rem;

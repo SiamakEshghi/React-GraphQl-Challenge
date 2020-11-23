@@ -38,7 +38,7 @@ const Artist = (props: ArtistProps): React.Node => {
     history.push(`/artist/${artistId}/album/${mbid}`);
   };
 
-  // Add to and remove from favourite list and trigger toast after add
+  // Add to and remove from favorite list and trigger toast after add
   const dispatch = useDispatch();
   const [toastMessage, setToastMessage] = React.useState('');
   const addArtistTofavList = () => {
