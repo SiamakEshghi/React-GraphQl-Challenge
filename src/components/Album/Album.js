@@ -15,11 +15,10 @@ type AlbumProps = {};
 const Album = (props: AlbumProps): React.Node => {
   const { t } = useTranslation();
 
+  // Get Album Data And Set Mapped result
   const params = useParams();
   const { artistId, albumId } = params;
-
   const [album, setAlbum] = React.useState({});
-
   const { loading, error } = useQuery(GET_ALBUM, {
     variables: { mbid: albumId },
     onCompleted: (data) => {
@@ -27,6 +26,7 @@ const Album = (props: AlbumProps): React.Node => {
     },
   });
 
+  // Navigate To Artist page
   const history = useHistory();
   const goToArtist = () => {
     history.push(`/artist/${artistId}`);

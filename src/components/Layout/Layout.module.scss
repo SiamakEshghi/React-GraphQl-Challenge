@@ -3,7 +3,6 @@
 
 .layout {
   min-height: 100vh;
-  padding-bottom: 2rem;
   display: grid;
   grid-template-rows: 4rem 1fr;
   grid-template-columns: 10rem 1fr;
@@ -32,7 +31,6 @@
     height: 100%;
     position: relative;
     z-index: 10;
-    background-color: rgba($color: red, $alpha: 0.7);
   }
 }
 
@@ -53,7 +51,7 @@
   grid-column: 1 / -1;
   background-color: $grayDark;
   border: none;
-  box-shadow: 0 3px 5px 4px $gray;
+  box-shadow: 0 -3px 6px 1px $gray;
   color: $white;
   font-weight: 600;
   font-size: 1.1rem;

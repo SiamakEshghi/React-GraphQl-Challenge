@@ -6,7 +6,7 @@ export const getArtistsList = (data) => {
     artist.name = edge.node.name;
     artist.mbid = edge.node.mbid;
     artist.imgUrl = edge.node.fanArt.thumbnails[0]?.url || '';
-    artist.key = edge.cursor;
+    artist.cursor = edge.cursor;
     return artist;
   });
 

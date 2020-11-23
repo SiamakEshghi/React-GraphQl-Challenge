@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
       return { favList: [...state.favList, action.newFav] };
     case t.REMOVE_FROM_FAV_LIST:
       const updatedFavList = state.favList.filter(
-        (fav) => fav.mbid === action.mbid
+        (fav) => fav.mbid !== action.mbid
       );
       return { favList: updatedFavList };
     default:

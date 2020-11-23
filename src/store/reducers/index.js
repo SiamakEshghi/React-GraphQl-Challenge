@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import favReducer from './favorite';
+import favReducer from './favourite';
 
 export default combineReducers({
   fav: favReducer,

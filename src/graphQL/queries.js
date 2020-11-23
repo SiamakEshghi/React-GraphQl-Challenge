@@ -25,3 +25,58 @@ export const GET_ARTISTS_LIST = gql`
     }
   }
 `;
+
+export const GET_ARTIST = gql`
+  query GetArtist($mbid: MBID!) {
+    lookup {
+      artist(mbid: $mbid) {
+        name
+        mbid
+        gender
+        country
+        rating {
+          value
+        }
+        fanArt {
+          thumbnails {
+            url
+          }
+        }
+
+        lifeSpan {
+          begin
+          end
+          ended
+        }
+        releaseGroups(type: ALBUM, first: 5) {
+          edges {
+            node {
+              title
+              mbid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_ALBUM = gql`
+  query GetArtist($mbid: MBID!) {
+    lookup {
+      releaseGroup(mbid: $mbid) {
+        title
+        firstReleaseDate
+        rating {
+          value
+        }
+        discogs {
+          forSaleCount
+          lowestPrice
+          year
+          dataQuality
+        }
+      }
+    }
+  }
+`;
