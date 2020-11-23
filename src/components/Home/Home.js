@@ -36,10 +36,9 @@ const Home = (props: HomeProps): React.Node => {
   const { isScrolledToBottom } = useWindowScroll();
   const endCursorRef = React.useRef('');
   const nameRef = React.useRef('');
-
   // fetch more data after scroll to bottom
   React.useEffect(() => {
-    if (isScrolledToBottom) {
+    if (isScrolledToBottom && endCursorRef.current) {
       getArtistsData({
         variables: { name: nameRef.current, endCursor: endCursorRef.current },
       });

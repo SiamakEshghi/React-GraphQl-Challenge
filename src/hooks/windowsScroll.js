@@ -9,12 +9,17 @@ function useWindowScroll() {
   }, []);
 
   function handleScroll() {
-    if (
-      window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
-    )
-      return setIsScrolledToBottom(false);
-    setIsScrolledToBottom(true);
+    const scrollTop =
+      document.documentElement?.scrollTop || document.body.scrollTop;
+
+    const scrollHeight =
+      document.documentElement?.scrollHeight || document.body.scrollHeight;
+
+    if (window.innerHeight + scrollTop + 50 >= scrollHeight) {
+      return setIsScrolledToBottom(true);
+    }
+
+    setIsScrolledToBottom(false);
   }
 
   return { isScrolledToBottom };

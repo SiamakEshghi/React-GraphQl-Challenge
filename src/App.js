@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <Suspense fallback={<Spinner loading={true} />}>
+        <Suspense fallback={<></>}>
           <Switch>
             <Route path="/home" exact>
               <Home />
