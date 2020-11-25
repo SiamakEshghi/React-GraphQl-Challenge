@@ -14,9 +14,7 @@ export const GET_ARTISTS_LIST = gql`
             name
             fanArt {
               thumbnails {
-                imageID
                 url
-                likeCount
               }
             }
           }
@@ -46,7 +44,6 @@ export const GET_ARTIST = gql`
         lifeSpan {
           begin
           end
-          ended
         }
         releaseGroups(type: ALBUM, first: 5) {
           edges {
@@ -74,7 +71,6 @@ export const GET_ALBUM = gql`
           forSaleCount
           lowestPrice
           year
-          dataQuality
         }
       }
     }
