@@ -1,34 +1,29 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
+import loadable from '@loadable/component';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
-import './App.scss';
 
-const Home = React.lazy(() => import('./components/Home/Home'));
-const Artist = React.lazy(() => import('./components/Artist/Artist'));
-const Album = React.lazy(() => import('./components/Album/Album'));
+const Home = loadable(() => import('./components/Home/Home'));
+const Artist = loadable(() => import('./components/Artist/Artist'));
+const Album = loadable(() => import('./components/Album/Album'));
 
-type AppProps = {};
-
-function App(props: AppProps): React.Node {
+function App() {
   return (
     <div className="App">
       <Layout>
-        <React.Suspense fallback={<></>}>
-          <Switch>
-            <Route path="/home" exact>
-              <Home />
-            </Route>
-            <Route path="/artist/:artistId" exact>
-              <Artist />
-            </Route>
-            <Route path="/artist/:artistId/album/:albumId" exact>
-              <Album />
-            </Route>
-            <Redirect from="/" to="/home" />
-          </Switch>
-        </React.Suspense>
+        <Switch>
+          <Route path="/home" exact>
+            <Home />
+          </Route>
+          <Route path="/artist/:artistId" exact>
+            <Artist />
+          </Route>
+          <Route path="/artist/:artistId/album/:albumId" exact>
+            <Album />
+          </Route>
+          <Redirect from="/" to="/home" />
+        </Switch>
       </Layout>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import window from 'global/window';
 
 function getWindowDimensions() {
   const { innerWidth: windowWidth, innerHeight: windowHeight } = window;

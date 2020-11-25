@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import window from 'global/window';
 
 function useWindowScroll() {
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
