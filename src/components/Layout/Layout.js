@@ -35,6 +35,7 @@ const Layout = (props: LayoutProps): React.Node => {
       <button
         className={styles.btn}
         onClick={() => setShowSidebar((prevShowSidebar) => !prevShowSidebar)}
+        style={{ position: '-webkit-sticky' }}
       >
         {showSidebar ? t('layout.closeFav') : t('layout.openFav')}
       </button>
