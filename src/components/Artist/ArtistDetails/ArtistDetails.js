@@ -14,7 +14,7 @@ type ArtistDetailsProps = {
     gender?: string,
     rating?: number,
     country?: string,
-    mbid?: string,
+    mbid: string,
   },
   addToFaveHandler: () => void,
   removeFromFaveHandler: () => void,

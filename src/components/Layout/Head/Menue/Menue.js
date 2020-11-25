@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+// @flow
+import * as React from 'react';
 
 import MenueItems from './MenueItems/MenueItems';
 import styles from './Menue.module.scss';
 
-const Menue = (props) => {
-  const [showMenue, setShowMenue] = useState(false);
+type MenueProps = {};
+
+const Menue = (props: MenueProps): React.Node => {
+  const [showMenue, setShowMenue] = React.useState(false);
 
   return (
     <div>

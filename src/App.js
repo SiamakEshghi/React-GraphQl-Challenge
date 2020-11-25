@@ -1,18 +1,21 @@
-import React, { Suspense, lazy } from 'react';
+// @flow
+import * as React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import './App.scss';
 
-const Home = lazy(() => import('./components/Home/Home'));
-const Artist = lazy(() => import('./components/Artist/Artist'));
-const Album = lazy(() => import('./components/Album/Album'));
+const Home = React.lazy(() => import('./components/Home/Home'));
+const Artist = React.lazy(() => import('./components/Artist/Artist'));
+const Album = React.lazy(() => import('./components/Album/Album'));
 
-function App() {
+type AppProps = {};
+
+function App(props: AppProps): React.Node {
   return (
     <div className="App">
       <Layout>
-        <Suspense fallback={<></>}>
+        <React.Suspense fallback={<></>}>
           <Switch>
             <Route path="/home" exact>
               <Home />
@@ -25,7 +28,7 @@ function App() {
             </Route>
             <Redirect from="/" to="/home" />
           </Switch>
-        </Suspense>
+        </React.Suspense>
       </Layout>
     </div>
   );

@@ -4,13 +4,12 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Albums.module.scss';
 
+type Album = {
+  title?: string,
+  mbid: string,
+};
 type AlbumsProps = {
-  albums: [
-    {
-      title?: String,
-      mbid: string,
-    }
-  ],
+  albums: ?(Album[]),
   albumClickHandler: (string) => void,
 };
 

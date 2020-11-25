@@ -1,6 +1,32 @@
-export const getAlbum = (data) => {
-  const releaseGroup = data?.lookup?.releaseGroup || {};
-  const result = {
+// @flow
+import type { Rating } from '../../flowTypes';
+type DiscogsType = {
+  forSaleCount?: number,
+  lowestPrice?: number,
+  year?: number,
+};
+
+type Data = {
+  lookup: {
+    releaseGroup: {
+      title?: string,
+      firstReleaseDate?: string,
+      rating: Rating,
+      discogs?: DiscogsType,
+    },
+  },
+};
+
+export type AlbumType = {
+  title?: string,
+  firstReleaseDate?: string,
+  rating?: number,
+  discogs: DiscogsType,
+};
+
+export const getAlbum = (data: Data): AlbumType => {
+  const { releaseGroup } = data.lookup;
+  const result: AlbumType = {
     discogs: {},
   };
   result.title = releaseGroup.title;

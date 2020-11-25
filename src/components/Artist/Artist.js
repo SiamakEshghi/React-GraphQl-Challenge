@@ -15,6 +15,7 @@ import Spinner from '../shared/Spinner/Spinner';
 import Error from '../shared/Error/Error';
 import Toast from '../shared/Toast/Toast';
 import styles from './Artist.module.scss';
+import type { ArtistType } from './utils';
 
 type ArtistProps = {};
 
@@ -24,7 +25,7 @@ const Artist = (props: ArtistProps): React.Node => {
   // Get Artist Data And Set Mapped result
   const params = useParams();
   const { artistId } = params;
-  const [artist, setArtist] = React.useState({});
+  const [artist, setArtist] = React.useState<?ArtistType>(null);
   const { loading, error } = useQuery(GET_ARTIST, {
     variables: { mbid: artistId },
     onCompleted: (data) => {
@@ -42,17 +43,21 @@ const Artist = (props: ArtistProps): React.Node => {
   const dispatch = useDispatch();
   const [toastMessage, setToastMessage] = React.useState('');
   const addArtistTofavList = () => {
-    dispatch(addToFavList({ name: artist.name, mbid: artist.mbid }));
-    setToastMessage(`${artist.name} ${t('artDetails.addToFavToast')}`);
+    dispatch(addToFavList({ name: artist?.name, mbid: artist?.mbid }));
+    setToastMessage(`${artist?.name || ''} ${t('artDetails.addToFavToast')}`);
   };
   const removeArtistTofavList = () => {
-    dispatch(removeFromFavList(artist.mbid));
-    setToastMessage(`${artist.name} ${t('artDetails.removeFromFavToast')}`);
+    dispatch(removeFromFavList(artist?.mbid));
+    setToastMessage(
+      `${artist?.name || ''} ${t('artDetails.removeFromFavToast')}`
+    );
   };
 
   if (error) return <Error title={t('error.artist')} link="/home" />;
 
   if (loading) return <Spinner loading={loading} />;
+
+  if (!artist) return null;
 
   return (
     <div className={styles.artist}>
