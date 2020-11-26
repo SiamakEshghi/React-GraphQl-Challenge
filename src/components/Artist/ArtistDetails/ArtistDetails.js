@@ -23,10 +23,10 @@ type ArtistDetailsProps = {
 const ArtistDetails = (props: ArtistDetailsProps): React.Node => {
   const { artist, addToFaveHandler, removeFromFaveHandler } = props;
   const { t } = useTranslation();
-  const { favList } = useSelector(({ fav }) => fav);
+  const { favList } = useSelector((state) => state.fav);
 
   return (
-    <div className={styles.artDetails}>
+    <div className={styles.artDetails} data-testid="component-artistDetails">
       <h2>
         {t('artDetails.name')}:&nbsp;{artist.name}
       </h2>
@@ -51,9 +51,14 @@ const ArtistDetails = (props: ArtistDetailsProps): React.Node => {
             color="red"
             onClick={removeFromFaveHandler}
             className={styles.icon}
+            title="heart-icon"
           />
         ) : (
-          <IoMdHeartEmpty onClick={addToFaveHandler} className={styles.icon} />
+          <IoMdHeartEmpty
+            onClick={addToFaveHandler}
+            className={styles.icon}
+            title="empty-heart-icon"
+          />
         )}
       </h1>
     </div>

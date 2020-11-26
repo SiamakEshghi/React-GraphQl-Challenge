@@ -15,57 +15,53 @@ import Spinner from '../shared/Spinner/Spinner';
 import Error from '../shared/Error/Error';
 import Toast from '../shared/Toast/Toast';
 import styles from './Artist.module.scss';
-import type { ArtistType } from './utils';
 
 type ArtistProps = {};
 
 const Artist = (props: ArtistProps): React.Node => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [toastMessage, setToastMessage] = React.useState('');
 
   // Get Artist Data And Set Mapped result
   const params = useParams();
   const { artistId } = params;
-  const [artist, setArtist] = React.useState<?ArtistType>(null);
-  const { loading, error } = useQuery(GET_ARTIST, {
+
+  const { loading, error, data } = useQuery(GET_ARTIST, {
     variables: { mbid: artistId },
-    onCompleted: (data) => {
-      setArtist(getArtist(data));
-    },
   });
 
   // Navigate To Album page
   const history = useHistory();
-  const goToAlbum = (mbid) => {
-    history.push(`/artist/${artistId}/album/${mbid}`);
+  const goToAlbum = (albumMbid) => {
+    history.push(`/artist/${artistId}/album/${albumMbid}`);
   };
 
+  if (loading) return <Spinner loading={loading} />;
+
+  if (error) return <Error title={t('error.artist')} link="/home" />;
+
+  const artist = getArtist(data);
+
   // Add to and remove from favorite list and trigger toast after add
-  const dispatch = useDispatch();
-  const [toastMessage, setToastMessage] = React.useState('');
   const addArtistTofavList = () => {
     dispatch(addToFavList({ name: artist?.name, mbid: artist?.mbid }));
     setToastMessage(`${artist?.name || ''} ${t('artDetails.addToFavToast')}`);
   };
-  const removeArtistTofavList = () => {
+  const removeArtistFromfavList = () => {
     dispatch(removeFromFavList(artist?.mbid));
     setToastMessage(
       `${artist?.name || ''} ${t('artDetails.removeFromFavToast')}`
     );
   };
 
-  if (error) return <Error title={t('error.artist')} link="/home" />;
-
-  if (loading) return <Spinner loading={loading} />;
-
-  if (!artist) return null;
-
   return (
-    <div className={styles.artist}>
+    <div className={styles.artist} data-testid="artist-module">
       <ImageCard imgUrl={artist?.imgUrl} />
       <ArtistDetails
         artist={artist}
         addToFaveHandler={addArtistTofavList}
-        removeFromFaveHandler={removeArtistTofavList}
+        removeFromFaveHandler={removeArtistFromfavList}
       />
       <div className={styles.albums}>
         <Albums albums={artist.albums} albumClickHandler={goToAlbum} />

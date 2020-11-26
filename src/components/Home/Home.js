@@ -71,7 +71,7 @@ const Home = (props: HomeProps): React.Node => {
   ));
 
   return (
-    <div className={styles.home}>
+    <div className={styles.home} data-testid="home-module">
       <div className={styles.search}>
         <Search searchHandler={searchForTheArtist} />
       </div>
@@ -79,7 +79,9 @@ const Home = (props: HomeProps): React.Node => {
         <Spinner loading={loading} />
       ) : (
         <>
-          <div className={styles.cards}>{renderCards}</div>
+          <div className={styles.cards} data-testid="cards">
+            {renderCards}
+          </div>
           {/* debouncing spinner*/}
           <Spinner loading={loading} />
         </>

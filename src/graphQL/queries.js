@@ -14,7 +14,9 @@ export const GET_ARTISTS_LIST = gql`
             name
             fanArt {
               thumbnails {
+                imageID
                 url
+                likeCount
               }
             }
           }
@@ -28,8 +30,8 @@ export const GET_ARTIST = gql`
   query GetArtist($mbid: MBID!) {
     lookup {
       artist(mbid: $mbid) {
-        name
         mbid
+        name
         gender
         country
         rating {

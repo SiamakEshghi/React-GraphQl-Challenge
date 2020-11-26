@@ -9,7 +9,6 @@ import { getAlbum } from './utils';
 import Spinner from '../shared/Spinner/Spinner';
 import Error from '../shared/Error/Error';
 import styles from './Album.module.scss';
-import type { AlbumType } from './utils';
 
 type AlbumProps = {};
 
@@ -19,12 +18,9 @@ const Album = (props: AlbumProps): React.Node => {
   // Get Album Data And Set Mapped result
   const params = useParams();
   const { artistId, albumId } = params;
-  const [album, setAlbum] = React.useState<?AlbumType>(null);
-  const { loading, error } = useQuery(GET_ALBUM, {
+
+  const { loading, error, data } = useQuery(GET_ALBUM, {
     variables: { mbid: albumId },
-    onCompleted: (data) => {
-      setAlbum(getAlbum(data));
-    },
   });
 
   // Navigate To Artist page
@@ -38,10 +34,10 @@ const Album = (props: AlbumProps): React.Node => {
 
   if (loading) return <Spinner loading={loading} />;
 
-  if (!album) return null;
+  const album = getAlbum(data);
 
   return (
-    <div className={styles.album}>
+    <div className={styles.album} data-testid="album-module">
       <button className={styles.btn} onClick={goToArtist}>
         {t('album.backToArtist')}
       </button>

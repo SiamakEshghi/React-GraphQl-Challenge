@@ -13,7 +13,7 @@ type AppProps = {};
 
 function App(props: AppProps): React.Node {
   return (
-    <div className="App">
+    <div className="App" aria-label="app-module">
       <Layout>
         <React.Suspense fallback={<></>}>
           <Switch>

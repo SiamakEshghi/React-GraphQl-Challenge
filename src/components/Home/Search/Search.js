@@ -30,6 +30,7 @@ const Search = (props: SearchProps): React.Node => {
       value={value}
       placeholder={t('search.placeHolder')}
       onChange={onChangeHandler}
+      name="search"
     />
   );
 };
