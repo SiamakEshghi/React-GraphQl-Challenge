@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Siamak Eshghi React Graphql Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Thank you for your time!
+Here's the address of the challenge, I hope you'll like it 😊.
+[Heroku deploy link](https://house-of-artists.herokuapp.com/).
 
-## Available Scripts
+## Process
 
-In the project directory, you can run:
+**Design process**: I'm using [Figma](http://figma.com/) to design any website or application.
+For react App I always consider component composition in designing. It helps me to have a grate knowledge
+about the structur of my app.
 
-### `yarn start`
+**Development process**: I usually start the project by learning about the technology that I have less experience with. In this project, I started by reviewing Graphql and React Hydration.
+The next step was reading the documentation of the API I'm going to consume in the app [musicbrainz](https://musicbrainz.org/doc/MusicBrainz_Database) and I started to make and test queries for the pages using (https://graphbrainz.herokuapp.com/).
+For React Hydration I read many documents and I gave it a try. Unfortunately, it is not complete yet but I made another Branch (SSR-try ) for it so you can see what I've done.
+After gathering the information, I started the project by installing all tools I need and tested before.
+Since I wanted to do all requirements in the challenge and I did this project in my free time between the work I had to do some tasks out of the order than I usually do.
+In the end, I tried to do some unit tests on the project(never do at the end 😊), testing on different browsers and different size devices to be sure it is fully responsive.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To build this App I used this technologies:
 
-### `yarn test`
+- [react-create-app]
+- [React Hooks]
+- [graphql]
+- [react-appolo]
+- [react-icons]
+- [redux]
+- [react-redux]
+- [react-spinners]
+- [react-icons]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Style
 
-### `yarn build`
+- [React CSS Modules]
+- [node-sass]
+- [CSS Grids]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Type checking
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [flow]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Test
 
-### `yarn eject`
+- [testing-library]
+- [jest]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Bonus
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This Application is multi-language. Users can switch between 'FR' and 'IN' via the menu.
+[i18next]
+[react-i18next]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Doing this project was an interesting experience 😊.
+Please don't hesitate to contact me if you have any questions.
